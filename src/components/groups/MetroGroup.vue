@@ -37,7 +37,7 @@
                             wide: false
                         },
                         {
-                            id: 'home2',
+                            id: 'addRecord',
                             href: './tiles-templates.html',
                             src: '/static/appbar.png',
                             label: 'Tiles Templates222',

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home/Home'
 import MetroGroup from '@/components/groups/MetroGroup'
+import AddRecord from '@/components/questions/AddRecord'
 Vue.use(Router)
 
 export default new Router({
@@ -17,6 +18,10 @@ export default new Router({
       name: 'metroGroup',
       component: MetroGroup
     },
-    
+    {
+      path: '/addRecord',
+      name: 'AddRecord',
+      component: AddRecord
+    },
   ]
 })

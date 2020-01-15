@@ -1,13 +1,16 @@
 <template>
   <div id="app">
     <MetroHeader id="MetroHeader"> </MetroHeader>
-    <router-view class="container-fluid"></router-view>
+    <keep-alive>
+      <router-view class="container-fluid"></router-view>
+    </keep-alive>
+
     <!-- <MetroGroup></MetroGroup> -->
   </div>
 </template>
 
 <script>
-  
+
   // import {MetroHeader,MetroGroup,Content} from '@/components/layouts';
   import MetroGroup from '@/components/groups/MetroGroup';
   import MetroHeader from '@/components/headers/MetroHeader';
@@ -25,12 +28,12 @@
       MetroGroup
     },
     created() {
-      this.$router.push('index');
+      this.$router.push('index').catch((e) => {});
     },
     watch: {
       selected: function (newV, oldV) {
         console.log(newV, '--', oldV);
-        
+
       }
     }
   }

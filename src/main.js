@@ -6,9 +6,13 @@ import router from './router'
 import Mint from 'mint-ui'
 import Axios from 'axios'
 import 'mint-ui/lib/style.css';
+// import iView from 'iview'
+// import 'iview/dist/styles/iview.css'
+
+// Vue.use(iView)
 
 Vue.use(Mint);
-Axios.defaults.baseURL='http://localhost:8080'
+Axios.defaults.baseURL = 'http://localhost:8080'
 Vue.prototype.$axios = Axios;
 Vue.config.productionTip = false
 

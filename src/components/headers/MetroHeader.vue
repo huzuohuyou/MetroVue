@@ -3,7 +3,7 @@
         <div class="row-fluid">
             <div class="span8">
                 <div id="header-container">
-                    <router-link id="backbutton" class="win-backbutton"  to="/index"></router-link>
+                    <router-link id="backbutton" class="win-backbutton" to="/index"></router-link>
                     <h5>BootMetro</h5>
                     <div class="dropdown">
                         <a class="header-dropdown dropdown-toggle accent-color" data-toggle="dropdown" href="#">

@@ -1,13 +1,14 @@
 <template>
-  <a class="tile imagetext bg-color-blueDark" :class="{'wide':item.wide}" :href='item.href'>
+  <!-- :href='item.href' -->
+  <router-link class="tile imagetext bg-color-blueDark" :class="{'wide':item.wide}" :to="item.id">
     <div class="image-wrapper">
-      <img :src='item.src'/>
+      <img :src='item.src' />
     </div>
     <div class="column-text">
       <div class="text4">{{item.text}}</div>
     </div>
     <div class="app-label">{{item.label}}</div>
-  </a>
+  </router-link>
 </template>
 
 <script>

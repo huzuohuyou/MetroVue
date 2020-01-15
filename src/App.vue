@@ -1,20 +1,13 @@
 <template>
   <div id="app">
-      <MetroHeader id="MetroHeader"> </MetroHeader>
-
-      <div id="MetroGroup" class="container-fluid">
-          <div class="row-fluid">
-              <div class="metro span12">
-  
-                <MetroGroup></MetroGroup>
-                  
-              </div>
-          </div>
-      </div>
+    <MetroHeader id="MetroHeader"> </MetroHeader>
+    <router-view class="container-fluid"></router-view>
+    <!-- <MetroGroup></MetroGroup> -->
   </div>
 </template>
 
 <script>
+  
   // import {MetroHeader,MetroGroup,Content} from '@/components/layouts';
   import MetroGroup from '@/components/groups/MetroGroup';
   import MetroHeader from '@/components/headers/MetroHeader';
@@ -29,12 +22,15 @@
     },
     components: {
       MetroHeader,
-       MetroGroup
+      MetroGroup
+    },
+    created() {
+      this.$router.push('index');
     },
     watch: {
       selected: function (newV, oldV) {
         console.log(newV, '--', oldV);
-        this.$router.push({ name: this.selected });
+        
       }
     }
   }

@@ -3,14 +3,8 @@
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="metro span12">
-                    <div class="metro-sections">
+                    <div class="metro-sections" >
                         <MetroItems v-for="todo in todos" :key="todo.id" :todo="todo"></MetroItems>
-
-                        <!-- <div class="metro-section tile-span-4">
-                            <h2>{{msg}}</h2>
-                            <MetroItem v-for="todo in todos" :key="todo.id" :todo="todo"></MetroItem>
-
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -21,7 +15,6 @@
 
 <script>
     let nextTodoId = 0;
-    // import MetroItem from '@/components/groups/MetroItem';
     import MetroItems from '@/components/groups/MetroItems';
     export default {
         name: 'MetroGroup',
@@ -36,7 +29,7 @@
                         id: nextTodoId++,
                         title: "hello world",
                         items: [{
-                            id: nextTodoId++,
+                            id: 'home',
                             href: './tiles-templates.html',
                             src: "/static/metro-tiles.jpg",
                             label: 'Tiles Templates111',
@@ -44,7 +37,7 @@
                             wide: false
                         },
                         {
-                            id: nextTodoId++,
+                            id: 'home2',
                             href: './tiles-templates.html',
                             src: '/static/appbar.png',
                             label: 'Tiles Templates222',
@@ -52,7 +45,7 @@
                             wide: true
                         },
                         {
-                            id: nextTodoId++,
+                            id: 'home3',
                             href: './tiles-templates.html',
                             src: '/static/My Apps.png',
                             label: 'Tiles Templates333',
@@ -64,7 +57,7 @@
                         id: nextTodoId++,
                         title: "hello world2",
                         items: [{
-                            id: nextTodoId++,
+                            id: 'home4',
                             href: './tiles-templates.html',
                             src: "/static/metro-tiles.jpg",
                             label: 'Tiles Templates111',
@@ -72,7 +65,7 @@
                             wide: false
                         },
                         {
-                            id: nextTodoId++,
+                            id: 'home5',
                             href: './tiles-templates.html',
                             src: '/static/appbar.png',
                             label: 'Tiles Templates222',
@@ -80,7 +73,7 @@
                             wide: true
                         },
                         {
-                            id: nextTodoId++,
+                            id: 'home6',
                             href: './tiles-templates.html',
                             src: '/static/My Apps.png',
                             label: 'Tiles Templates333',

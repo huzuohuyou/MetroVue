@@ -1,12 +1,12 @@
 <template>
-  <a class="tile imagetext bg-color-blueDark" :class="{'wide':todo.wide}" :href='todo.href'>
+  <a class="tile imagetext bg-color-blueDark" :class="{'wide':item.wide}" :href='item.href'>
     <div class="image-wrapper">
-      <img :src='todo.src'/>
+      <img :src='item.src'/>
     </div>
     <div class="column-text">
-      <div class="text4">{{todo.text}}</div>
+      <div class="text4">{{item.text}}</div>
     </div>
-    <div class="app-label">{{todo.label}}</div>
+    <div class="app-label">{{item.label}}</div>
   </a>
 </template>
 
@@ -14,7 +14,7 @@
   export default {
     name: 'MetroItem',
     props: {
-      todo: {
+      item: {
         type: Object,
         required: true
       }

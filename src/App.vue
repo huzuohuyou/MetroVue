@@ -42,6 +42,5 @@
 <style lang="css">
   body {
     padding-top: 50px;
-    background-color: #333;
   }
 </style>

@@ -1,60 +1,72 @@
 <template>
-    <i-form :model="formItem" :label-width="80">
-        <Form-item label="输入框">
-            <i-input :value.sync="formItem.input" placeholder="请输入"></i-input>
-        </Form-item>
-        <Form-item label="选择器">
-            <i-select :model.sync="formItem.select" placeholder="请选择">
-                <i-option value="beijing">北京市</i-option>
-                <i-option value="shanghai">上海市</i-option>
-                <i-option value="shenzhen">深圳市</i-option>
-            </i-select>
-        </Form-item>
-        <Form-item label="日期控件">
+    <Form :model="formItem" :label-width="80" class="contenter">
+        <FormItem label="日期">
             <Row>
-                <i-col span="11">
-                    <Date-picker type="date" placeholder="选择日期" :value.sync="formItem.date"></Date-picker>
-                </i-col>
-                <i-col span="2" style="text-align: center">-</i-col>
-                <i-col span="11">
-                    <Time-picker type="time" placeholder="选择时间" :value.sync="formItem.time"></Time-picker>
-                </i-col>
+                <Col span="11">
+                    <DatePicker type="date" placeholder="Select date" v-model="formItem.date"></DatePicker>
+                </Col>
+                <Col span="2" style="text-align: center">电话</Col>
+                <Col span="11">
+                <Input v-model="formItem.input" placeholder="Enter something..."></Input>
+                </Col>
             </Row>
-        </Form-item>
-        <Form-item label="单选框">
-            <Radio-group :model.sync="formItem.radio">
-                <Radio value="male">男</Radio>
-                <Radio value="female">女</Radio>
-            </Radio-group>
-        </Form-item>
-        <Form-item label="多选框">
-            <Checkbox-group :model.sync="formItem.checkbox">
-                <Checkbox value="吃饭"></Checkbox>
-                <Checkbox value="睡觉"></Checkbox>
-                <Checkbox value="跑步"></Checkbox>
-                <Checkbox value="看电影"></Checkbox>
-            </Checkbox-group>
-        </Form-item>
-        <Form-item label="开关">
-            <Switch :checked.sync="formItem.switch" size="large">
-                <span slot="open">开启</span>
-                <span slot="close">关闭</span>
-            </Switch>
-        </Form-item>
-        <Form-item label="滑块">
-            <Slider :value.sync="formItem.slider" range></Slider>
-        </Form-item>
-        <Form-item label="文本域">
-            <i-input :value.sync="formItem.textarea" type="textarea" :autosize="{minRows: 2,maxRows: 5}"
-                placeholder="请输入..."></i-input>
-        </Form-item>
-        <Form-item>
-            <i-button type="primary">提交</i-button>
-            <i-button type="ghost" style="margin-left: 8px">取消</i-button>
-        </Form-item>
-    </i-form>
+        </FormItem>
+        <FormItem label="科室，病区">
+            <Input v-model="formItem.input" placeholder="Enter something..."></Input>
+        </FormItem>
+        <FormItem label="Select">
+            <Select v-model="formItem.select">
+                <Option value="beijing">New York</Option>
+                <Option value="shanghai">London</Option>
+                <Option value="shenzhen">Sydney</Option>
+            </Select>
+        </FormItem>
+        <FormItem label="DatePicker">
+            <Row>
+                <Col span="11">
+                <DatePicker type="date" placeholder="Select date" v-model="formItem.date"></DatePicker>
+                </Col>
+                <Col span="2" style="text-align: center">-</Col>
+                <Col span="11">
+                <TimePicker type="time" placeholder="Select time" v-model="formItem.time"></TimePicker>
+                </Col>
+            </Row>
+        </FormItem>
+        <FormItem label="区分">
+            <RadioGroup v-model="formItem.radio">
+                <Radio label="male">门诊</Radio>
+                <Radio label="female">住院</Radio>
+            </RadioGroup>
+        </FormItem>
+        <FormItem label="类别">
+            <CheckboxGroup v-model="formItem.checkbox">
+                <Checkbox label="咨询"></Checkbox>
+                <Checkbox label="解锁"></Checkbox>
+                <Checkbox label="权限"></Checkbox>
+                <Checkbox label="现场"></Checkbox>
+            </CheckboxGroup>
+        </FormItem>
+        <FormItem label="Switch">
+            <i-switch v-model="formItem.switch" size="large">
+                <span slot="open">On</span>
+                <span slot="close">Off</span>
+            </i-switch>
+        </FormItem>
+        <FormItem label="Slider">
+            <Slider v-model="formItem.slider" range></Slider>
+        </FormItem>
+        <FormItem label="Text">
+            <Input v-model="formItem.textarea" type="textarea" :autosize="{minRows: 2,maxRows: 5}"
+                placeholder="Enter something..."></Input>
+        </FormItem>
+        <FormItem>
+            <Button type="primary">Submit</Button>
+            <Button style="margin-left: 8px">Cancel</Button>
+        </FormItem>
+    </Form>
 </template>
 <script>
+
     export default {
         name: 'AddRecord',
         data() {
@@ -74,3 +86,16 @@
         }
     }
 </script>
+
+<style lang="css" scoped>
+    @import '../../assets/content/css/iview.css';
+</style>
+<style lang="css" scoped>
+    .contenter {
+        width: 70%;
+        margin-top: 40px;
+        margin-right: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+</style>

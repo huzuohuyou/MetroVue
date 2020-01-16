@@ -63,7 +63,7 @@
 </script>
 
 
-<style lang="css">
+<style lang="css" scoped>
     @import 'http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700';
 
     @import '../../assets/content/css/bootstrap.css';

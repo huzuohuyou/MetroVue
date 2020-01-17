@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="metro span12">
-                    <div class="metro-sections" >
+                    <div class="metro-sections">
                         <MetroItems v-for="todo in todos" :key="todo.id" :todo="todo"></MetroItems>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                 todos: [
                     {
                         id: nextTodoId++,
-                        title: "hello world",
+                        title: "运维记录",
                         items: [{
                             id: 'home',
                             href: './tiles-templates.html',
@@ -45,7 +45,7 @@
                             wide: true
                         },
                         {
-                            id: 'home3',
+                            id: 'listRecord',
                             href: './tiles-templates.html',
                             src: '/static/My Apps.png',
                             label: 'Tiles Templates333',
@@ -93,16 +93,16 @@
 
 </style>
 <style lang="css" scoped>
-        @import 'http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700';
-    
-        @import '../../assets/content/css/bootstrap.css';
-        @import '../../assets/content/css/bootstrap-responsive.css';
-        @import '../../assets/content/css/bootmetro.css';
-        @import '../../assets/content/css/bootmetro-tiles.css';
-        @import '../../assets/content/css/bootmetro-charms.css';
-        @import '../../assets/content/css/metro-ui-light.css';
-        @import '../../assets/content/css/icomoon.css';
-    
-        @import '../../assets/content/css/demo.css';
-        @import '../../assets/scripts/google-code-prettify/prettify.css';
-    </style>
+    @import 'http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700';
+
+    @import '../../assets/content/css/bootstrap.css';
+    @import '../../assets/content/css/bootstrap-responsive.css';
+    @import '../../assets/content/css/bootmetro.css';
+    @import '../../assets/content/css/bootmetro-tiles.css';
+    @import '../../assets/content/css/bootmetro-charms.css';
+    @import '../../assets/content/css/metro-ui-light.css';
+    @import '../../assets/content/css/icomoon.css';
+
+    @import '../../assets/content/css/demo.css';
+    @import '../../assets/scripts/google-code-prettify/prettify.css';
+</style>

@@ -5,11 +5,12 @@
 
 </template>
 <script>
+    import EditRecord from '@/components/questions/EditRecord'
     export default {
         data() {
             return {
                 columns7: [
-                    
+                  
                     {
                         title: '问题',
                         key: 'question'
@@ -64,15 +65,22 @@
             }
         },
         methods: {
-            // show(index) {
-            //     this.$Modal.info({
-            //         title: 'User Info',
-            //         content: `Name：${this.data6[index].name}<br>Age：${this.data6[index].age}<br>Address：${this.data6[index].address}`
-            //     })
-            // },
-            // remove(index) {
-            //     this.data6.splice(index, 1);
-            // }
+            show(index) {
+                // alert(this.data6[index].date)
+                // this.$layer.alert("找不到对象！");
+                this.$layer.iframe({
+                    content: {
+                        title: '信息',
+                        content: EditRecord, //传递的组件对象
+                        parent: this,//当前的vue对象
+                        data: {
+                            info: { id: this.data6[index].id }
+                        }//props
+                    },
+                    area: ['800px', '600px'],
+                    title: 'title'
+                });
+            }
         },
         created() {
             this.$axios.get('http://localhost:21021/api/services/app/Question/GetAllQuestion')

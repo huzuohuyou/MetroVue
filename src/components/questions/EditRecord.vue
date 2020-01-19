@@ -20,7 +20,7 @@
         <FormItem label="患者编号">
             <Input v-model="formItem.ptno" placeholder="Enter something..."></Input>
         </FormItem>
-        
+
         <FormItem label="区分">
             <RadioGroup v-model="formItem.kind">
                 <Radio label="1">门诊</Radio>
@@ -41,7 +41,7 @@
                 <Radio label="4">现场</Radio>
             </RadioGroup>
         </FormItem>
-        
+
         <FormItem label="问题">
             <Input v-model="formItem.question" type="textarea" :autosize="{minRows: 2,maxRows: 5}"
                 placeholder="Enter something..."></Input>
@@ -62,7 +62,7 @@
 </template>
 <script>
     export default {
-        name: 'AddRecord',
+        name: 'EditRecord',
         data() {
             return {
                 formItem: {
@@ -80,11 +80,45 @@
                 }
             }
         },
+        props: {
+            info: {
+                type: Object,
+                default: () => {
+                    return {};
+                }
+            },
+            layerid: {
+                type: String,
+                default: ""
+            },
+            lydata: {
+                type: Object,
+                default: () => {
+                    return {};
+                }
+            }
+        },
+        created() {
+            this.$axios.get('http://localhost:21021/api/services/app/Question/GetQuestion?id=' + this.info.id
+                ,
+                {
+                    headers: {
+                        'Content-Type': 'application/json; charset=utf-8'
+                    }
+                })
+                .then(res => {
+                    this.formItem = res.data.result;
+                    console.log('----'+res.data.result)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+
+        },
         methods: {
-            
             handleSubmit() {
                 // console.log(JSON.stringify(this.formItem))
-                this.$axios.post('http://localhost:21021/api/services/app/Question/AddRecord'
+                this.$axios.post('http://localhost:21021/api/services/app/Question/UpdateRecord'
                     , JSON.stringify(this.formItem),
                     {
                         headers: {
@@ -93,13 +127,46 @@
                     })
                     .then(res => {
                         console.log(res)
+                        this.$layer.close(this.layerid);
                     })
                     .catch(err => {
                         console.log(err)
                     })
 
+            },
+            onSubmit() {
+                this.$layer.msg("提交成功", () => {
+                    this.lydata.info.name = this.form.name;
+                    this.$layer.close(this.layerid);
+                });
+            },
+            cancel() {
+                this.$layer.close(this.layerid);
             }
+        },
+        mounted() {
+            this.form = this.info;
         }
+        // methods: {
+
+        //     handleSubmit() {
+        //         // console.log(JSON.stringify(this.formItem))
+        //         this.$axios.post('http://localhost:21021/api/services/app/Question/EditRecord'
+        //             , JSON.stringify(this.formItem),
+        //             {
+        //                 headers: {
+        //                     'Content-Type': 'application/json; charset=utf-8'
+        //                 }
+        //             })
+        //             .then(res => {
+        //                 console.log(res)
+        //             })
+        //             .catch(err => {
+        //                 console.log(err)
+        //             })
+
+        //     }
+        // }
 
     }
 </script>

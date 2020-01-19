@@ -10,6 +10,11 @@ import 'mint-ui/lib/style.css';
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 
+import layer from 'vue-layer'
+import 'vue-layer/lib/vue-layer.css';
+
+Vue.prototype.$layer = layer(Vue);
+
 Vue.use(iView)
 
 Vue.use(Mint);

@@ -20,7 +20,7 @@
         <FormItem label="患者编号">
             <Input v-model="formItem.ptno" placeholder="Enter something..."></Input>
         </FormItem>
-        
+
         <FormItem label="区分">
             <RadioGroup v-model="formItem.kind">
                 <Radio label="1">门诊</Radio>
@@ -41,7 +41,7 @@
                 <Radio label="4">现场</Radio>
             </RadioGroup>
         </FormItem>
-        
+
         <FormItem label="问题">
             <Input v-model="formItem.question" type="textarea" :autosize="{minRows: 2,maxRows: 5}"
                 placeholder="Enter something..."></Input>
@@ -71,9 +71,9 @@
                     dept: 'male',
                     user: '',
                     ptno: '',
-                    kind: '',
-                    role: '',
-                    type: '',
+                    kind: 1,
+                    role: 1,
+                    type: 1,
                     question: '',
                     reason: '',
                     answer: ''
@@ -81,14 +81,14 @@
             }
         },
         methods: {
-            
+
             handleSubmit() {
                 // console.log(JSON.stringify(this.formItem))
                 this.$axios.post('http://localhost:21021/api/services/app/Question/AddRecord'
                     , JSON.stringify(this.formItem),
                     {
                         headers: {
-                            'Content-Type': 'application/json; charset=utf-8'
+                            'Content-Type': 'application/json-patch+json; charset=utf-8'
                         }
                     })
                     .then(res => {

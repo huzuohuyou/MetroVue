@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <MetroHeader id="MetroHeader"> </MetroHeader>
-    <keep-alive>
-      <router-view class="container-fluid"></router-view>
-    </keep-alive>
+    <!-- <keep-alive> -->
+    <router-view class="container-fluid"></router-view>
+    <!-- </keep-alive> -->
 
     <!-- <MetroGroup></MetroGroup> -->
   </div>
@@ -28,7 +28,7 @@
       MetroGroup
     },
     created() {
-      this.$router.push('index').catch((e) => {});
+      this.$router.push('index').catch((e) => { });
     },
     watch: {
       selected: function (newV, oldV) {

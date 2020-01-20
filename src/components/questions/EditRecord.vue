@@ -108,7 +108,7 @@
                 })
                 .then(res => {
                     this.formItem = res.data.result;
-                    console.log('----'+res.data.result)
+                    console.log('----' + res.data.result)
                 })
                 .catch(err => {
                     console.log(err)

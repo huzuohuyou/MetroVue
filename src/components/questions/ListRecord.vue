@@ -1,16 +1,22 @@
 <template>
     <div class="contenter">
+        <div>
+            <MultiFilter @func="getMsgFormSon"></MultiFilter>
+        </div>
         <Table border :columns="columns7" :data="data6"></Table>
     </div>
-
 </template>
 <script>
     import EditRecord from '@/components/questions/EditRecord'
+    import MultiFilter from '@/components/filters/MultiFilter'
     export default {
+        components: {
+            MultiFilter,
+        },
         data() {
             return {
                 columns7: [
-                  
+
                     {
                         title: '问题',
                         key: 'question'
@@ -80,12 +86,15 @@
                     area: ['800px', '600px'],
                     title: 'title'
                 });
+            },
+            getMsgFormSon(data){
+                this.data6 = data
+                console.log(this.data6)
             }
         },
         created() {
             this.$axios.get('http://localhost:21021/api/services/app/Question/GetAllQuestion')
                 .then(res => {
-                    console.log(res.data.result)
                     this.data6 = res.data.result;
                 })
                 .catch(err => {

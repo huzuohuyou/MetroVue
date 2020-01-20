@@ -4,6 +4,7 @@ import Home from '@/components/Home/Home'
 import MetroGroup from '@/components/groups/MetroGroup'
 import AddRecord from '@/components/questions/AddRecord'
 import ListRecord from '@/components/questions/ListRecord'
+import MultiFilter from '@/components/filters/MultiFilter'
 Vue.use(Router)
 
 export default new Router({
@@ -28,6 +29,11 @@ export default new Router({
       path: '/listRecord',
       name: 'ListRecord',
       component: ListRecord
+    },
+    {
+      path: '/MultiFilter',
+      name: 'MultiFilter',
+      component: MultiFilter
     },
   ]
 })

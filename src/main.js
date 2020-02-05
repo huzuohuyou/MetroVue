@@ -13,6 +13,10 @@ import 'iview/dist/styles/iview.css'
 import layer from 'vue-layer'
 import 'vue-layer/lib/vue-layer.css';
 
+import JsonExcel from 'vue-json-excel'
+Vue.component('downloadExcel', JsonExcel)
+
+
 Vue.prototype.$layer = layer(Vue);
 
 Vue.use(iView)

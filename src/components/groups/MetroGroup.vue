@@ -28,58 +28,59 @@
                     {
                         id: nextTodoId++,
                         title: "运维记录",
-                        items: [{
-                            id: 'home',
-                            href: './tiles-templates.html',
-                            src: "/static/metro-tiles.jpg",
-                            label: 'Tiles Templates111',
-                            text: 'List of all tile templates: ',
-                            wide: false
-                        },
+                        items: [
+                        //     {
+                        //     id: 'home',
+                        //     href: './tiles-templates.html',
+                        //     src: "/static/metro-tiles.jpg",
+                        //     label: 'Nothing',
+                        //     text: 'Nobody ',
+                        //     wide: false
+                        // },
                         {
                             id: 'addRecord',
                             href: './tiles-templates.html',
                             src: '/static/appbar.png',
-                            label: 'Tiles Templates222',
-                            text: 'List of all tile templates: square, wide, widepeek, with images or text only.',
+                            label: '添加记录',
+                            text: '',
                             wide: true
                         },
                         {
                             id: 'listRecord',
                             href: './tiles-templates.html',
                             src: '/static/My Apps.png',
-                            label: 'Tiles Templates333',
-                            text: 'List of all tile templates: square, wide, widepeek, with images or text only.',
+                            label: '搜索记录',
+                            text: '',
                             wide: true
                         }]
                     },
                     {
-                        id: nextTodoId++,
-                        title: "hello world2",
-                        items: [{
-                            id: 'home4',
-                            href: './tiles-templates.html',
-                            src: "/static/metro-tiles.jpg",
-                            label: 'Tiles Templates111',
-                            text: 'List of all tile templates: ',
-                            wide: false
-                        },
-                        {
-                            id: 'home5',
-                            href: './tiles-templates.html',
-                            src: '/static/appbar.png',
-                            label: 'Tiles Templates222',
-                            text: 'List of all tile templates: square, wide, widepeek, with images or text only.',
-                            wide: true
-                        },
-                        {
-                            id: 'home6',
-                            href: './tiles-templates.html',
-                            src: '/static/My Apps.png',
-                            label: 'Tiles Templates333',
-                            text: '9999.',
-                            wide: true
-                        }]
+                        // id: nextTodoId++,
+                        // title: "hello world2",
+                        // items: [{
+                        //     id: 'home4',
+                        //     href: './tiles-templates.html',
+                        //     src: "/static/metro-tiles.jpg",
+                        //     label: 'Tiles Templates111',
+                        //     text: 'List of all tile templates: ',
+                        //     wide: false
+                        // },
+                        // {
+                        //     id: 'home5',
+                        //     href: './tiles-templates.html',
+                        //     src: '/static/appbar.png',
+                        //     label: 'Tiles Templates222',
+                        //     text: 'List of all tile templates: square, wide, widepeek, with images or text only.',
+                        //     wide: true
+                        // },
+                        // {
+                        //     id: 'home6',
+                        //     href: './tiles-templates.html',
+                        //     src: '/static/My Apps.png',
+                        //     label: 'Tiles Templates333',
+                        //     text: '9999.',
+                        //     wide: true
+                        // }]
                     }
 
                 ]

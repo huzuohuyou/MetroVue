@@ -15,13 +15,13 @@
         <Upload ref="upload" :show-upload-list="false" :default-file-list="defaultList" :on-success="handleSuccess"
             :format="['jpg','jpeg','png']" :max-size="2048" :on-format-error="handleFormatError"
             :on-exceeded-size="handleMaxSize" :before-upload="handleBeforeUpload" multiple type="drag"
-            action="ttp://localhost:21021/api/services/app/FileCommonService/UploadFile" style="display: inline-block;width:58px;">
+            action="http://localhost:21021/api/services/app/Question/UploadFile" style="display: inline-block;width:58px;">
             <div style="width: 58px;height:58px;line-height: 58px;">
                 <Icon type="ios-camera" size="20"></Icon>
             </div>
         </Upload>
         <Modal title="View Image" v-model="visible">
-            <img :src="'https://o5wwk8baw.qnssl.com/' + imgName + '/large'" v-if="visible" style="width: 100%">
+            <img :src="'http://localhost:21021//' + imgName " v-if="visible" style="width: 100%">
         </Modal>
     </div>
 </template>
@@ -35,12 +35,13 @@
                 ],
                 imgName: '',
                 visible: false,
-                uploadList: []
+                uploadList: [],
+                imgNames:[]
             }
         },
         methods: {
             handleView(name) {
-                this.imgName = name;
+                //this.imgName = name;
                 this.visible = true;
             },
             handleRemove(file) {
@@ -48,8 +49,13 @@
                 this.$refs.upload.fileList.splice(fileList.indexOf(file), 1);
             },
             handleSuccess(res, file) {
-                file.url = 'https://o5wwk8baw.qnssl.com/7eb99afb9d5f317c912f08b5212fd69a/avatar';
-                file.name = '7eb99afb9d5f317c912f08b5212fd69a';
+                this.imgName =res.result.fileUrl;
+                console.log('++++++++++')
+                // console.log(this.uploadList.name);
+                file.url ='http://localhost:21021'+ res.result.fileUrl;
+                file.name =res.result.fileName ;
+                this.imgNames.push(res.result.fileName)
+                this.$emit('func',this.imgNames)
             },
             handleFormatError(file) {
                 this.$Notice.warning({

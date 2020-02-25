@@ -56,7 +56,7 @@
         </FormItem>
         <FormItem label="截图">
 
-            <MyUpload></MyUpload>
+            <MyUpload @func="getImagesFormSon"></MyUpload>
         </FormItem>
         <FormItem>
             <Button type="primary" @click="handleSubmit('formItem')">Submit</Button>
@@ -84,7 +84,8 @@
                     type: 1,
                     question: '',
                     reason: '',
-                    answer: ''
+                    answer: '',
+                    uploadList:[]
                 }
             }
         },
@@ -106,6 +107,11 @@
                         console.log(err)
                     })
 
+            },
+            getImagesFormSon(data){
+                this.formItem.uploadList = data
+                console.log('--------')
+                console.log(this.formItem.uploadList)
             }
         }
 

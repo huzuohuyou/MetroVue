@@ -54,6 +54,10 @@
             <Input v-model="formItem.answer" type="textarea" :autosize="{minRows: 2,maxRows: 5}"
                 placeholder="Enter something..."></Input>
         </FormItem>
+        <FormItem label="截图">
+
+            <MyUpload></MyUpload>
+        </FormItem>
         <FormItem>
             <Button type="primary" @click="handleSubmit('formItem')">Submit</Button>
             <Button style="margin-left: 8px">Cancel</Button>
@@ -61,8 +65,12 @@
     </Form>
 </template>
 <script>
+    import MyUpload from "@/components/common/MyUpload";
     export default {
         name: 'AddRecord',
+        components: {
+            MyUpload
+        },
         data() {
             return {
                 formItem: {

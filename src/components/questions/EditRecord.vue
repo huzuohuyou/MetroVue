@@ -54,6 +54,7 @@
             <Input v-model="formItem.answer" type="textarea" :autosize="{minRows: 2,maxRows: 5}"
                 placeholder="Enter something..."></Input>
         </FormItem>
+        
         <FormItem>
             <Button type="primary" @click="handleSubmit('formItem')">Submit</Button>
             <Button style="margin-left: 8px">Cancel</Button>
@@ -61,6 +62,7 @@
     </Form>
 </template>
 <script>
+    
     export default {
         name: 'EditRecord',
         data() {

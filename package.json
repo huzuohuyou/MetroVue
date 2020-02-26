@@ -15,6 +15,7 @@
     "jquery": "^3.4.1",
     "layui-layer": "^1.0.9",
     "mint-ui": "^2.2.13",
+    "v-viewer": "^1.5.1",
     "vue": "^2.5.2",
     "vue-layer": "^1.1.7",
     "vue-router": "^3.0.1"

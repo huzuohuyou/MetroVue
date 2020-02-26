@@ -3,7 +3,7 @@
     <download-excel
       class="export-excel-wrapper"
       :data="json_data"
-      :fields="json_fibuttonelds"
+      :fields="json_fields"
       name="周报_吴海龙.xls"
     >
       <!-- 上面可以自定义自己的样式，还可以引用其他组件button -->
